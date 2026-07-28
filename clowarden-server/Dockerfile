@@ -10,8 +10,8 @@ WORKDIR /clowarden/clowarden-server
 RUN cargo build --release
 
 # Build frontend
-FROM node:20.19-alpine3.19 AS frontend-builder
-RUN apk --no-cache add git ca-certificates
+FROM node:24-alpine3.23 AS frontend-builder
+RUN apk --no-cache add git
 WORKDIR /web
 COPY web .
 ENV NODE_OPTIONS=--max_old_space_size=4096
