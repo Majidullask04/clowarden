@@ -11,7 +11,7 @@ RUN cargo build --release
 
 # Build frontend
 FROM node:24-alpine3.23 AS frontend-builder
-RUN apk --no-cache add git
+RUN apk --no-cache add git ca-certificates
 WORKDIR /web
 COPY web .
 ENV NODE_OPTIONS=--max_old_space_size=4096
