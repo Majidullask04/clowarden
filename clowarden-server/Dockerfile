@@ -10,7 +10,7 @@ WORKDIR /clowarden/clowarden-server
 RUN cargo build --release
 
 # Build frontend
-FROM node:20-alpine3.19 AS frontend-builder
+FROM node:20.19-alpine3.19 AS frontend-builder
 RUN apk --no-cache add git ca-certificates
 WORKDIR /web
 COPY web .
